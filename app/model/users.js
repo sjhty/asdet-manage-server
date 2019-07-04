@@ -17,6 +17,7 @@ module.exports = app => {
       created_at: { type:STRING(30) }
   },{
     timestamps: false,
+    tableName: 'users'
   });
 
   return Users;
