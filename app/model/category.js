@@ -1,7 +1,7 @@
 'use strict';
 
 module.exports = app => {
-    const { INTEGER, STRING, DECIMAL } = app.Sequelize;
+    const { INTEGER, STRING, DECIMAL, DATE } = app.Sequelize;
 
     const Category = app.model.define('category', {
         id: { type: INTEGER, primaryKey: true, autoIncrement: true },
@@ -11,7 +11,7 @@ module.exports = app => {
         minister_price: { type:DECIMAL(18,2), allowNull: false },//部长价
         director_price: { type:DECIMAL(18,2), allowNull: false },//理事价
         president_price: { type:DECIMAL(18,2), allowNull: false },//社长价
-        created_at: { type:STRING(30) }
+        created_at: { type:DATE }
     },{
         timestamps: false,
         tableName: 'category'

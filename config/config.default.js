@@ -26,6 +26,7 @@ module.exports = appInfo => {
     host: '49.234.12.142',
     port: 3306,
     database: 'asdet_data_test',
+    timezone: '+08:00'
   };
 
   config.security = {

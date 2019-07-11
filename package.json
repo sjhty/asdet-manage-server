@@ -39,7 +39,7 @@
     "sequelize": "npx sequelize init:config",
     "migrations": "npx sequelize init:migrations",
     "init-table": "npx sequelize migration:generate --name",
-    "migrate":"npx sequelize db:migrate"
+    "migrate": "npx sequelize db:migrate"
   },
   "ci": {
     "version": "10"

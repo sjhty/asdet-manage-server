@@ -3,7 +3,7 @@
 module.exports = {
   // 在执行数据库升级时调用的函数，创建 category 表
   up: async (queryInterface, Sequelize) => {
-    const { INTEGER, STRING, DECIMAL } = Sequelize;
+    const { INTEGER, STRING, DECIMAL, DATE } = Sequelize;
     await queryInterface.createTable('category', {
       id: { type: INTEGER, primaryKey: true, autoIncrement: true },
       name: { type:STRING(20), allowNull: false },
@@ -12,7 +12,7 @@ module.exports = {
       minister_price: { type:DECIMAL(18,2), allowNull: false },//部长价
       director_price: { type:DECIMAL(18,2), allowNull: false },//理事价
       president_price: { type:DECIMAL(18,2), allowNull: false },//社长价
-      created_at: { type:STRING(30) }
+      created_at: { type:DATE, defaultValue: Sequelize.literal('CURRENT_TIMESTAMP') }
     })
   },
 

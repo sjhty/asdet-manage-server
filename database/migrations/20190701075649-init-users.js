@@ -3,7 +3,7 @@
 module.exports = {
   // 在执行数据库升级时调用的函数，创建 users 表
   up: async (queryInterface, Sequelize) => {
-    const { INTEGER, STRING } = Sequelize;
+    const { INTEGER, STRING, DATE } = Sequelize;
     await queryInterface.createTable('users', {
       id: { type: INTEGER, primaryKey: true, autoIncrement: true },
       name: { type:STRING(20), allowNull: false },
@@ -15,7 +15,7 @@ module.exports = {
       birthday: { type:STRING(30) },
       icon_url: { type:STRING(100) },
       balance: { type:INTEGER },//积分
-      created_at: { type:STRING(30) }
+      created_at: { type:DATE, defaultValue: Sequelize.literal('CURRENT_TIMESTAMP') }
     })
   },
 
