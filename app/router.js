@@ -16,5 +16,5 @@ module.exports = app => {
   router.post('/api/products/add',controller.products.addOrUpdateProduct);
 
   //upload
-  router.post('/asdet/api/upload', controller.upload.upload);
+  router.post('/api/upload', controller.upload.upload);
 };
